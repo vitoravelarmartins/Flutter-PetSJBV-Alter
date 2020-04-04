@@ -25,6 +25,16 @@ dependencies:
   cupertino_icons: ^0.1.2
   shared_preferences: ^0.5.3
   google_fonts: ^0.3.10
+  flutter_launcher_icons: "^0.7.3"
+
+  #Ao Altera ou adicionar uma depencia use o comando flutter packages get
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/icon.png"
+
+  #Use comando seguinte para carregar o icon do app flutter packages pub run flutter_launcher_icons:main
 
 dev_dependencies:
   flutter_test:
@@ -39,6 +49,8 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/icon/icon.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg
