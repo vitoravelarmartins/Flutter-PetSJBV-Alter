@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:petsaojoao/cadTutorForm/tutorForm.dart';
+import 'package:petsaojoao/pages/cadTutorForm/tutorForm.dart';
 
 void main() => runApp(CadTutor());
 

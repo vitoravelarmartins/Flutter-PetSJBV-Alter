@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:petsaojoao/cadTutorForm/tutorForm.dart';
+import 'package:petsaojoao/pages/cadTutorForm/tutorForm.dart';
 
-class NameStep extends StatelessWidget {
+class EmailStep extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.green[200],
+      // color: Colors.green[200],
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            'Insira seu nome completo...',
+            'Insira seu E-mail...',
             style: worldStyle,
             textAlign: TextAlign.center,
           ),
           TextField(
             textAlign: TextAlign.center,
-            controller: nameText,
           ),
           RaisedButton(
-              onPressed: () => Navigator.pushNamed(context, '/step2'),
+              onPressed: () => Navigator.pushNamed(context, '/step6'),
               child: Text('Pronto!')),
         ],
       ),

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:petsaojoao/cadTutorForm/tutorForm.dart';
+import 'package:petsaojoao/pages/cadTutorForm/tutorForm.dart';
 
-class EmailStep extends StatelessWidget {
+class CpfStep extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.green[200],
+      // color: Colors.green[200],
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            'Insira seu E-mail...',
+            'Insira seu CPF...',
             style: worldStyle,
             textAlign: TextAlign.center,
           ),
@@ -18,7 +18,7 @@ class EmailStep extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           RaisedButton(
-              onPressed: () => Navigator.pushNamed(context, '/step6'),
+              onPressed: () => Navigator.pushNamed(context, '/step4'),
               child: Text('Pronto!')),
         ],
       ),
