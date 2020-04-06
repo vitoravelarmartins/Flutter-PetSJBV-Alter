@@ -19,6 +19,15 @@ TextStyle apiData = TextStyle(fontSize: 18.0, color: Colors.red);
 
 //Controllers Universais...
 TextEditingController nameText = new TextEditingController();
+TextEditingController rgText = new TextEditingController();
+TextEditingController cpfText = new TextEditingController();
+TextEditingController adressText = new TextEditingController();
+TextEditingController logradouroText = new TextEditingController();
+TextEditingController bairroText = new TextEditingController();
+TextEditingController numeroCasaText = new TextEditingController();
+TextEditingController complementoText = new TextEditingController();
+TextEditingController emailText = new TextEditingController();
+TextEditingController numeroTelefoneText = new TextEditingController();
 
 class TutorForm extends StatelessWidget {
   @override
@@ -114,7 +123,7 @@ class HomePage extends StatelessWidget {
               style: worldStyle,
               textAlign: TextAlign.center,
             ),
-            Container(child: buttonConfimarPaginaVamos(context, '/step1')),
+            Container(child: buttonDegrade(context, 'Vamos La!', '/step1')),
           ],
         ),
       ),

@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:petsaojoao/pages/cadTutorForm/tutorForm.dart';
 
-Widget buttonConfimarPaginaVamos(context, caminhoPagina) {
+Widget buttonDegrade(
+  context,
+  textoBotao,
+  caminhoPagina,
+) {
   return OutlineButton(
     //onPressed: () => Navigator.pushNamed(context, '/step1'),
     onPressed: () => Navigator.pushNamed(context, caminhoPagina),
-    shape: new RoundedRectangleBorder(
-        borderRadius: new BorderRadius.circular(30.0)),
-    //borderSide: BorderSide(color: Colors.blue),
-    highlightColor: Colors.blue,
+    borderSide: BorderSide.none,
     padding: const EdgeInsets.all(0.0),
     child: Container(
       decoration: BoxDecoration(
@@ -15,29 +17,25 @@ Widget buttonConfimarPaginaVamos(context, caminhoPagina) {
           gradient: LinearGradient(colors: <Color>[Colors.green, Colors.cyan])),
       padding: const EdgeInsets.all(10.0),
       child: Text(
-        'Vamos Lá!',
+        textoBotao,
         style: new TextStyle(color: Colors.white, fontSize: 20.0),
       ),
     ),
   );
 }
 
-Widget buttonConfimarPaginaConfimar(context, caminhoPagina) {
+Widget buttonLineBraco(context, textoBotao, caminhoPagina) {
   return OutlineButton(
-    //onPressed: () => Navigator.pushNamed(context, '/step1'),
     onPressed: () => Navigator.pushNamed(context, caminhoPagina),
     shape: new RoundedRectangleBorder(
         borderRadius: new BorderRadius.circular(30.0)),
-    //borderSide: BorderSide(color: Colors.blue),
-    highlightColor: Colors.blue,
+    borderSide: BorderSide(color: Colors.white, width: 3),
+    highlightedBorderColor: Colors.transparent,
     padding: const EdgeInsets.all(0.0),
     child: Container(
-      decoration: BoxDecoration(
-          borderRadius: new BorderRadius.circular(50.0),
-          gradient: LinearGradient(colors: <Color>[Colors.green, Colors.cyan])),
       padding: const EdgeInsets.all(10.0),
       child: Text(
-        'Comfimar',
+        textoBotao,
         style: new TextStyle(color: Colors.white, fontSize: 20.0),
       ),
     ),

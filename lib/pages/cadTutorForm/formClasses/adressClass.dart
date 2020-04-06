@@ -1,53 +1,58 @@
 import 'package:flutter/material.dart';
 import 'package:petsaojoao/pages/cadTutorForm/tutorForm.dart';
 
+//Components
+import 'package:petsaojoao/components/containers.dart';
+import 'package:petsaojoao/components/textLabel.dart';
+import 'package:petsaojoao/components/textField.dart';
+import 'package:petsaojoao/components/buttonsConfirmForm.dart';
+import 'package:petsaojoao/components/espacamento.dart';
+
 class AdressStep extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    logradouroText.text = "Seu logradouro atravez do CEP aqui!";
+    bairroText.text = "Seu bairro atravez do CEP aqui!";
+
     return Container(
       //color: Colors.green[200],
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text(
-            'Insira seu CEP...',
-            style: worldStyle,
-            textAlign: TextAlign.center,
-          ),
-          TextField(
-            textAlign: TextAlign.center,
-          ),
-          Text(
-            'Rua:',
-            style: worldStyle,
-            textAlign: TextAlign.center,
-          ),
-          Text(
-            'Aqui irá aparecer a rua que vira da API',
-            style: apiData,
-            textAlign: TextAlign.center,
-          ),
-          Text(
-            'Bairro:',
-            style: worldStyle,
-            textAlign: TextAlign.center,
-          ),
-          Text(
-            'Aqui irá aparecer o Bairro que vira da API',
-            style: apiData,
-            textAlign: TextAlign.center,
-          ),
-          Text(
-            'Número:',
-            style: worldStyle,
-            textAlign: TextAlign.center,
-          ),
-          TextField(
-            textAlign: TextAlign.center,
-          ),
-          RaisedButton(
-              onPressed: () => Navigator.pushNamed(context, '/step5'),
-              child: Text('Pronto!')),
+          textoBranco('Insira seu CEP'),
+          numberFildForm("12345-678", adressText),
+          Row(children: <Widget>[
+            new Flexible(
+              child: enderecoFieldForm(logradouroText, "Logradouro"),
+            ),
+            new Flexible(
+              child: enderecoFieldForm(bairroText, "Bairro"),
+            ),
+          ]),
+          // Row(children: <Widget>[
+          //   new Flexible(
+          //     child: Column(children: <Widget>[
+          //       textoMenorBranco('Número'),
+          //       numberMenorFildForm("Ex:12, 05, 300..", numeroText),
+          //     ]),
+          //   ),
+          //   new Flexible(
+          //     child: Column(children: <Widget>[
+          //       textoMenorBranco('Número'),
+          //       numberMenorFildForm("Ex:12, 05, 300..", numeroText),
+          //     ]),
+          //   ),
+          // ]),
+          Row(children: <Widget>[
+            new Flexible(
+                child: enderecoRealInputFieldForm(
+                    numeroCasaText, 'Número', 'Ex:13,07,333...')),
+            new Flexible(
+              child: enderecoRealInputFieldForm(
+                  complementoText, "Complemento", 'Ex:Ap,Fundos,Sub...'),
+            ),
+          ]),
+          buttonLineBraco(context, 'PRONTO', '/step5'),
         ],
       ),
     );

@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:petsaojoao/pages/cadTutorForm/tutorForm.dart';
 
+//Components
+import 'package:petsaojoao/components/containers.dart';
+import 'package:petsaojoao/components/textLabel.dart';
+import 'package:petsaojoao/components/textField.dart';
+import 'package:petsaojoao/components/buttonsConfirmForm.dart';
+import 'package:petsaojoao/components/espacamento.dart';
+
 class CellStep extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -9,17 +16,10 @@ class CellStep extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text(
-            'Insira seu Telefone de Contato...',
-            style: worldStyle,
-            textAlign: TextAlign.center,
-          ),
-          TextField(
-            textAlign: TextAlign.center,
-          ),
-          RaisedButton(
-              onPressed: () => Navigator.pushNamed(context, '/step7'),
-              child: Text('Pronto!')),
+          textoBranco('Insira seu número de telefone com DDD'),
+          numberFildForm("(DDD)1 2345-6789", numeroTelefoneText),
+          espacamento(30.0),
+          buttonLineBraco(context, 'PRONTO', '/step7'),
         ],
       ),
     );

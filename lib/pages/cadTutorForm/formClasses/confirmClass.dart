@@ -1,100 +1,84 @@
 import 'package:flutter/material.dart';
 import 'package:petsaojoao/pages/cadTutorForm/tutorForm.dart';
 
+//Components
+import 'package:petsaojoao/components/containers.dart';
+import 'package:petsaojoao/components/textLabel.dart';
+import 'package:petsaojoao/components/textField.dart';
+import 'package:petsaojoao/components/buttonsConfirmForm.dart';
+import 'package:petsaojoao/components/espacamento.dart';
+
 class ConfirmStep extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // color: Colors.green[200],
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Text(
-            'Por Favor, confirme seus dados!',
+    return containerGrandeFundoBranco(
+      ListView(children: [
+        Text(
+          'Agora precisamos que confirme seus dados',
+          style: worldStyle,
+          textAlign: TextAlign.center,
+        ),
+        espacamento(50.0),
+        Container(
+          //color: Color.fromRGBO(220, 220, 220, 0.2),
+          child: Text(
+            'Dados Pessoais',
             style: worldStyle,
             textAlign: TextAlign.center,
           ),
-          Text(
-            'Nome:',
+        ),
+        formFinalTextFild(nameText, 'Nome Completo'),
+        Container(
+          // color: Color.fromRGBO(220, 220, 220, 0.2),
+          child: Row(children: <Widget>[
+            new Flexible(
+              child: numberformFinalTextFild(rgText, 'RG'),
+            ),
+            new Flexible(
+              child: numberformFinalTextFild(cpfText, 'CPF'),
+            ),
+          ]),
+        ),
+        emailformFinalTextFild(emailText, 'E-mail'),
+        Container(
+          //color: Color.fromRGBO(220, 220, 220, 0.2),
+          child: numberformFinalTextFild(numeroTelefoneText, 'Telefone'),
+        ),
+        espacamento(10.0),
+        Container(
+          //color: Color.fromRGBO(220, 220, 220, 0.2),
+          child: Text(
+            'Endereço',
             style: worldStyle,
             textAlign: TextAlign.center,
           ),
-          Text(
-            nameText.text,
-            style: worldStyle,
-            textAlign: TextAlign.center,
+        ),
+        numberformFinalTextFild(adressText, 'CEP'),
+        Container(
+          // color: Color.fromRGBO(220, 220, 220, 0.2),
+          child: andressformFinalTextFild(logradouroText, 'Logradouro'),
+        ),
+        Container(
+          child: andressformFinalTextFild(bairroText, 'Bairro'),
+        ),
+        Container(
+          //color: Color.fromRGBO(220, 220, 220, 0.2),
+          child: Row(
+            children: <Widget>[
+              new Flexible(
+                child: numberformFinalTextFild(numeroCasaText, 'Nº'),
+              ),
+              new Flexible(
+                flex: 2,
+                child: numberformFinalTextFild(complementoText, 'Complemento'),
+              ),
+            ],
           ),
-          RaisedButton(
-              onPressed: () => Navigator.pushNamed(context, '/step1'),
-              child: Text('Editar')),
-          Text(
-            'RG:',
-            style: worldStyle,
-            textAlign: TextAlign.center,
-          ),
-          Text(
-            'RG que a pessoa inseriu...',
-            style: worldStyle,
-            textAlign: TextAlign.center,
-          ),
-          RaisedButton(
-              onPressed: () => Navigator.pushNamed(context, '/step2'),
-              child: Text('Editar')),
-          Text(
-            'CPF:',
-            style: worldStyle,
-            textAlign: TextAlign.center,
-          ),
-          Text(
-            'CPF que a pessoa inseriu...',
-            style: worldStyle,
-            textAlign: TextAlign.center,
-          ),
-          RaisedButton(
-              onPressed: () => Navigator.pushNamed(context, '/step3'),
-              child: Text('Editar')),
-          Text(
-            'Endereço:',
-            style: worldStyle,
-            textAlign: TextAlign.center,
-          ),
-          Text(
-            'Endereço que a pessoa inseriu...',
-            style: worldStyle,
-            textAlign: TextAlign.center,
-          ),
-          RaisedButton(
-              onPressed: () => Navigator.pushNamed(context, '/step4'),
-              child: Text('Editar')),
-          Text(
-            'Email:',
-            style: worldStyle,
-            textAlign: TextAlign.center,
-          ),
-          Text(
-            'Email que a pessoa inseriu...',
-            style: worldStyle,
-            textAlign: TextAlign.center,
-          ),
-          RaisedButton(
-              onPressed: () => Navigator.pushNamed(context, '/step5'),
-              child: Text('Editar')),
-          Text(
-            'Telefone:',
-            style: worldStyle,
-            textAlign: TextAlign.center,
-          ),
-          Text(
-            'Telefone que a pessoa inseriu...',
-            style: worldStyle,
-            textAlign: TextAlign.center,
-          ),
-          RaisedButton(
-              onPressed: () => Navigator.pushNamed(context, '/step6'),
-              child: Text('Editar')),
-          RaisedButton(onPressed: () {}, child: Text('Pronto!')),
-        ],
-      ),
+        ),
+        Container(
+          child: buttonDegrade(context, 'Confirmar', '/step7'),
+        )
+      ]),
     );
   }
 }
