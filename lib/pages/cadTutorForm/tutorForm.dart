@@ -55,52 +55,56 @@ class TutorForm extends StatelessWidget {
         // ),
         body: Container(
           decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                  colors: <Color>[Colors.cyan, Colors.green])),
-          child: SafeArea(
-            child: WillPopScope(
-              onWillPop: () async =>
-                  !await _navigatorKey.currentState.maybePop(),
-              child: Navigator(
-                key: _navigatorKey,
-                // ignore: missing_return
-                onGenerateRoute: (settings) {
-                  switch (settings.name) {
-                    case '/':
-                      return MaterialPageRoute(
-                          builder: (context) => HomePage());
-                      break;
-                    case '/step1':
-                      return CupertinoPageRoute(
-                          builder: (context) => NameStep());
-                      break;
-                    case '/step2':
-                      return CupertinoPageRoute(builder: (context) => RgStep());
-                      break;
-                    case '/step3':
-                      return CupertinoPageRoute(
-                          builder: (context) => CpfStep());
-                      break;
-                    case '/step4':
-                      return CupertinoPageRoute(
-                          builder: (context) => AdressStep());
-                      break;
-                    case '/step5':
-                      return CupertinoPageRoute(
-                          builder: (context) => EmailStep());
-                      break;
-                    case '/step6':
-                      return CupertinoPageRoute(
-                          builder: (context) => CellStep());
-                      break;
-                    case '/step7':
-                      return CupertinoPageRoute(
-                          builder: (context) => ConfirmStep());
-                      break;
-                  }
-                },
+              //colors: <Color>[Colors.cyan, Colors.green])),
+              image: DecorationImage(
+                  image: AssetImage("assets/background/paisagem.jpg"),
+                  fit: BoxFit.cover)),
+          child: Container(
+            decoration: BoxDecoration(color: Color.fromRGBO(0, 188, 212, 0.8)),
+            child: SafeArea(
+              child: WillPopScope(
+                onWillPop: () async =>
+                    !await _navigatorKey.currentState.maybePop(),
+                child: Navigator(
+                  key: _navigatorKey,
+                  // ignore: missing_return
+                  onGenerateRoute: (settings) {
+                    switch (settings.name) {
+                      case '/':
+                        return MaterialPageRoute(
+                            builder: (context) => HomePage());
+                        break;
+                      case '/step1':
+                        return CupertinoPageRoute(
+                            builder: (context) => NameStep());
+                        break;
+                      case '/step2':
+                        return CupertinoPageRoute(
+                            builder: (context) => RgStep());
+                        break;
+                      case '/step3':
+                        return CupertinoPageRoute(
+                            builder: (context) => CpfStep());
+                        break;
+                      case '/step4':
+                        return CupertinoPageRoute(
+                            builder: (context) => AdressStep());
+                        break;
+                      case '/step5':
+                        return CupertinoPageRoute(
+                            builder: (context) => EmailStep());
+                        break;
+                      case '/step6':
+                        return CupertinoPageRoute(
+                            builder: (context) => CellStep());
+                        break;
+                      case '/step7':
+                        return CupertinoPageRoute(
+                            builder: (context) => ConfirmStep());
+                        break;
+                    }
+                  },
+                ),
               ),
             ),
           ),
